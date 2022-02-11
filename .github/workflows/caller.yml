@@ -11,4 +11,5 @@ jobs:
 
   calling-called:
     uses: rameshkharat/called/.github/workflows/main.yml@main
-   
+  calling-called-workflow-2:
+    uses: rameshkharat/called/.github/workflows/main.yml@main
