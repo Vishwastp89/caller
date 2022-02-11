@@ -1,6 +1,6 @@
 name: Reusable Workflow user
 on:
-  push
+  workflow_dispatch
 jobs:
   do-it:
     runs-on: ubuntu-latest
@@ -16,3 +16,8 @@ jobs:
   calling-called-workflow-2:
     needs: calling-called
     uses: rameshkharat/called-workflow-2/.github/workflows/main.yml@main
+    
+  calling-called-workflow-with-secrets:
+    needs: calling-called-workflow-2
+    uses: rameshkharat/called-workflow-with-secrets/.github/workflows/main.yml@main
+    
