@@ -1,8 +1,4 @@
 name: Reusable Workflow user
-env:
-          DOCKER_USER: ${{secrets.DOCKER_USER}}
-          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-    
 on:
   workflow_dispatch
 jobs:
@@ -24,5 +20,9 @@ jobs:
         
   calling-called-workflow-with-secrets:
     uses: rameshkharat/called-workflow-with-secrets/.github/workflows/main.yml@main
-    
-        
+    with:
+      image_name: idlisamosa
+      tag: $HITHUB_RUN_NUMBER
+    secrets:
+      DOCKER_USER: ${{secrets.DOCKER_USER}}
+      DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
