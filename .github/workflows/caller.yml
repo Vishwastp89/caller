@@ -1,13 +1,13 @@
 name: Reusable Workflow user
 on:
-  workflow_dispatch:
+  push
 jobs:
   do-it:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: echo Hello, world-Looking Good!
 
   calling-called:
     uses: rameshkharat/called/.github/workflows/main.yml@main
