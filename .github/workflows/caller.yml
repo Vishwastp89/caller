@@ -10,6 +10,9 @@ jobs:
         run: echo Hello, world-Looking Good!
 
   calling-called:
+    needs: do-it
     uses: rameshkharat/called/.github/workflows/main.yml@main
+    
   calling-called-workflow-2:
+    needs: calling-called
     uses: rameshkharat/called-workflow-2/.github/workflows/main.yml@main
