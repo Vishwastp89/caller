@@ -23,11 +23,12 @@ jobs:
    
         
   calling-called-workflow-with-secrets:
-    name: example1 
-    runs-on: ubuntu-latest
-    steps:
-    -  uses: rameshkharat/called-workflow-with-secrets/.github/workflows/main.yml@main
-       with:
-          username: $((inputs.username))
-          token: ${{secrets.token}}     
+    uses: rameshkharat/called-workflow-with-secrets/.github/workflows/main.yml@main
+    with:
+        ENVIRONMENT: myenvironment
+    secrets:
+       DOCKER_USER: ${{secrets.DOCKER_USER}}
+       DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+       
+       
         
