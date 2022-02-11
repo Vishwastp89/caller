@@ -27,7 +27,7 @@ jobs:
     steps:
     - run: |
        echo $DOCKER_USER
-       echo DOCKER_PASSWORD
+       echo $DOCKER_PASSWORD
       
     # uses: rameshkharat/called-workflow-with-secrets/.github/workflows/main.yml@main
      
